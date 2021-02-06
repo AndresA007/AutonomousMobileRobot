@@ -6,4 +6,5 @@ A differential drive Autonomous Mobile Robot based on the navigation stack of RO
 
 
 ## Images
-![AMR Voice Command demo img](Documentation/AMR_VoiceCommand_demo.gif "AMR Voice Command demo")
+<img src="Documentation/AMR_VoiceCommand_demo.gif" alt="AMR Voice Command demo img"
+style="float: left; margin-right: 10px; width: 200px"/>

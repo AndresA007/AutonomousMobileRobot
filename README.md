@@ -41,7 +41,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
 
 ## Getting Started
-Check the [documentation](Documentation/GETTING_STARTED.md) for more information.
+Check the [Getting Started](Documentation/GETTING_STARTED.md) for more information.
 
 ## Change Log
 Check the [Change Log](Documentation/CHANGELOG.md) for more information.

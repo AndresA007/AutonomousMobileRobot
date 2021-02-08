@@ -1,6 +1,48 @@
 # Getting Started
 Here you will find the instructions to test the VVA Autonomous Mobile Robot, either in simulation or with a hardware vehicle.
 
+## Installation
+
+### Pre-requisites
+> NOTE: These steps were tested on Linux Mint 19.1 which is based on Ubuntu 18.04 (Bionic)
+
+* **Install ROS Melodic**
+> It should also work in ROS Noetic but it has not been tested
+
+~~TODO!~~
+
+* **Install DeepSpeech v0.8.2** for TensorFlow-Lite over Python 3.7.
+```bash
+python3.7 -m pip install deepspeech-tflite
+````
+* **Download rosjava minimal (Optional)**: If you want to make a modification of the request or the response of the ROS Service used in the Mobile App, then rosjava is needed to generate the .jar file. [Get rosjava_minimal](http://wiki.ros.org/rosjava/Tutorials/kinetic/Source%20Installation)
+
+### VVA Installation
+* Clone the repository
+```bash
+git clone https://github.com/AndresA007/AutonomousMobileRobot.git
+```
+* The package depth_nav_tools/laserscan_kinect is used for cliff detection, it is not available in ROS Melodic but it can be downloaded and compiled. [Get depth_nav_tools
+](https://github.com/mdrwiega/depth_nav_tools)
+```bash
+cd AutonomousMobileRobot
+git clone https://github.com/mdrwiega/depth_nav_tools.git
+```
+* Download the DeepSpeech model files “deepspeech-0.8.2-models.scorer” and “deepspeech-0.8.2-models.tflite” from [the Web site of DeepSpeech](https://github.com/mozilla/DeepSpeech/releases/tag/v0.8.2), save them in “AutonomousMobileRobot/DeepSpeechModule/english_model_v0.8.2/”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Pre-requisites
 * ROS Melodic
 * The package depth_nav_tools/laserscan_kinect is used for cliff detection, it is not available in ROS Melodic but it can be downloaded and compiled. [Get depth_nav_tools
@@ -8,7 +50,10 @@ Here you will find the instructions to test the VVA Autonomous Mobile Robot, eit
 * If you want to make a modification of the request or the response of the ROS Service used in the Mobile App, then rosjava is needed to generate the .jar file. [Get rosjava_minimal](http://wiki.ros.org/rosjava/Tutorials/kinetic/Source%20Installation)
 * DeepSpeech v0.8.2 for TensorFlow-Lite installed over Python 3.7 (to install: "python3.7 -m pip install deepspeech-tflite").
 * Download the model files “deepspeech-0.8.2-models.scorer” and “deepspeech-0.8.2-models.tflite” from [the Web site of DeepSpeech](https://github.com/mozilla/DeepSpeech/releases/tag/v0.8.2), save them in “DeepSpeechModule/english_model_v0.8.2/”
-* The hardware was tested with an Nvidia Jetson Nano runnng the official Nvidia image of Ubuntu Bionic 18.01.
+* The hardware was tested with an Nvidia Jetson Nano runnng the official Nvidia image of Ubuntu Bionic 18.04.
+
+
+
 
 ## Run in simulation
 * Deploy the model in Gazebo:
@@ -55,7 +100,8 @@ roslaunch vva_voice_interact_server vva_voice_interact_server.launch
 ```
 
 ## Run on the hardware (Jetson Nano)
-__TODO__
+
+~~TODO!~~
 
 ## Known Issues
 * The model is not shown in Gazebo, when the joints are of type "revolute". For example, this happened with the joints between the Kinect and the base.

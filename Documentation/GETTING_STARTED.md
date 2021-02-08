@@ -4,10 +4,10 @@ Here you will find the instructions to test the VVA Autonomous Mobile Robot, eit
 ## Installation
 
 ### Pre-requisites
-> NOTE: These steps were tested on Linux Mint 19.1 which is based on Ubuntu 18.04 (Bionic)
+  > NOTE: These steps were tested on Linux Mint 19.1 which is based on Ubuntu 18.04 (Bionic)
 
 * **Install ROS Melodic**
-> It should also work in ROS Noetic but it has not been tested
+    > It should also work in ROS Noetic but it has not been tested
 
 ~~TODO!~~
 

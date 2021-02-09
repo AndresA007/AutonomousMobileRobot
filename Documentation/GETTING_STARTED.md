@@ -106,10 +106,12 @@ Open one terminal per each command.
   ```
 
   Simulation running on Gazebo
+
   <img src="Documentation/Simulation_Gazebo.png" alt="Gazebo simulator img"
   style="float: left; margin-right: 10px;" width=50%/>
 
   Simulation as seen from Rviz
+
   <img src="Documentation/Simulation_rviz.png" alt="Rviz img"
   style="float: left; margin-right: 10px;" width=50%/>
 

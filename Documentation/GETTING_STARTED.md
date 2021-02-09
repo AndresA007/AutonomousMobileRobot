@@ -4,61 +4,61 @@ Here you will find the instructions to test the VVA Autonomous Mobile Robot, eit
 ## Installation
 
 ### Pre-requisites
-  > NOTE: These steps were tested on Linux Mint 19.1 which is based on Ubuntu 18.04 (Bionic). For the hardware vehicle, was tested with an Nvidia Jetson Nano runnng the official Nvidia image of Ubuntu Bionic 18.04.
+> NOTE: These steps were tested on Linux Mint 19.1 which is based on Ubuntu 18.04 (Bionic). For the hardware vehicle, was tested with an Nvidia Jetson Nano runnng the official Nvidia image of Ubuntu Bionic 18.04.
 
 * **Install ROS Melodic**
 
-      > It should also work in ROS Noetic but it has not been tested yet.
+  > NOTE: It should also work in ROS Noetic but it has not been tested yet.
 
-    Follow the instructions from the page [Ubuntu install of ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
+  Follow the instructions from the page [Ubuntu install of ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
 * **Install DeepSpeech v0.8.2** for TensorFlow-Lite (If installing on the J-Nano use python3.7).
-    ```bash
-    python3 -m pip install deepspeech-tflite
-    ````
+  ```bash
+  python3 -m pip install deepspeech-tflite
+  ````
 * **Download rosjava minimal (Optional)**: If you want to make a modification of the request or the response of the ROS Service used in the Mobile App, then rosjava is needed to generate the .jar file. [Get rosjava_minimal](http://wiki.ros.org/rosjava/Tutorials/kinetic/Source%20Installation)
 
 ### VVA Installation
 * Clone the repository
-```bash
-git clone https://github.com/AndresA007/AutonomousMobileRobot.git
-```
+  ```bash
+  git clone https://github.com/AndresA007/AutonomousMobileRobot.git
+  ```
 * The package depth_nav_tools/laserscan_kinect is used for cliff detection, it is not available in ROS Melodic but it can be downloaded and compiled. [Get depth_nav_tools
 ](https://github.com/mdrwiega/depth_nav_tools)
-```bash
-cd AutonomousMobileRobot/VVA_ws/src/
-git clone https://github.com/mdrwiega/depth_nav_tools.git
-```
+  ```bash
+  cd AutonomousMobileRobot/VVA_ws/src/
+  git clone https://github.com/mdrwiega/depth_nav_tools.git
+  ```
 * Download the DeepSpeech model files “deepspeech-0.8.2-models.scorer” and “deepspeech-0.8.2-models.tflite” from [the Web site of DeepSpeech](https://github.com/mozilla/DeepSpeech/releases/tag/v0.8.2), save them in “AutonomousMobileRobot/DeepSpeechModule/english_model_v0.8.2/”
 * Compile the ROS nodes
-```bash
-cd AutonomousMobileRobot/VVA_ws/
-catkin_make
-```
-If there are errors regarding packages not found install them from apt
-```bash
-sudo apt install ros-melodic-PACKAGE_NAME
-```
-In my case these additional packages were required
-```bash
-sudo apt install ros-melodic-image-geometry
-sudo apt install ros-melodic-pcl-ros
-sudo apt install ros-melodic-costmap-2d
-sudo apt install libusb-1.0-0-dev
-```
+  ```bash
+  cd AutonomousMobileRobot/VVA_ws/
+  catkin_make
+  ```
+  If there are errors regarding packages not found install them from apt
+  ```bash
+  sudo apt install ros-melodic-PACKAGE_NAME
+  ```
+  In my case these additional packages were required
+  ```bash
+  sudo apt install ros-melodic-image-geometry
+  sudo apt install ros-melodic-pcl-ros
+  sudo apt install ros-melodic-costmap-2d
+  sudo apt install libusb-1.0-0-dev
+  ```
 * Add the following lines at the end of ~/.bashrc. Replace the IP addresses as per your network or use "127.0.0.1".
-```bash
-# ROS Environment
-export AUTONOMOUS_MOBILE_ROBOT_HOME=~/AutonomousMobileRobot
-source /opt/ros/melodic/setup.bash
-source $AUTONOMOUS_MOBILE_ROBOT_HOME/VVA_ws/devel/setup.bash
-export ROS_IP=(LOCAL IP ADDRESS)
-export ROS_MASTER_URI=http://(MASTER IP ADDRESS, IN THIS CASE IS ALSO THE LOCAL ADDRESS):11311
-```
-Reload the .bashrc
-```bash
-source ~/.bashrc
-```
+  ```bash
+  # ROS Environment
+  export AUTONOMOUS_MOBILE_ROBOT_HOME=~/AutonomousMobileRobot
+  source /opt/ros/melodic/setup.bash
+  source $AUTONOMOUS_MOBILE_ROBOT_HOME/VVA_ws/devel/setup.bash
+  export ROS_IP=(LOCAL IP ADDRESS)
+  export ROS_MASTER_URI=http://(MASTER IP ADDRESS, IN THIS CASE IS ALSO THE LOCAL ADDRESS):11311
+  ```
+  Reload the .bashrc
+  ```bash
+  source ~/.bashrc
+  ```
 
 ## Run in simulation
 Open one terminal per each command.

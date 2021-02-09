@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="database_path_simulation" default="$AUTONOMOUS_MOBILE_ROBOT_HOME/Rtabmap_SavedMaps/rtabmap_simulation.db"/>
+  <arg name="database_path_simulation" default="~/AutonomousMobileRobot/Rtabmap_SavedMaps/rtabmap_simulation.db"/>
   <arg name="rtabmapviz"        default="false"/>
   <arg name="localization"      default="false"/>
   

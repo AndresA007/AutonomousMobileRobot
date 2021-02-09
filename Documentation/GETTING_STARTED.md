@@ -63,51 +63,60 @@ Here you will find the instructions to test the VVA Autonomous Mobile Robot, eit
 ## Run in simulation
 Open one terminal per each command.
 * Deploy the model in Gazebo:
-```bash
-roslaunch vva_gazebo vva_world.launch
-```
+  ```bash
+  roslaunch vva_gazebo vva_world.launch
+  ```
 * Start rviz and the state_publishers:
-```bash
-roslaunch vva_description rviz_rtabmap_simulation.launch
-```
+  ```bash
+  roslaunch vva_description rviz_rtabmap_simulation.launch
+  ```
 #### For building the map:
 * Start rtabmap:
-```bash
-roslaunch vva_navigation vva_rtabmap_simulation.launch localization:=false
-```
+  ```bash
+  roslaunch vva_navigation vva_rtabmap_simulation.launch localization:=false
+  ```
 * Use the teleop:
-```bash
-roslaunch vva_nav_test vva_teleop3.launch
-```
+  ```bash
+  roslaunch vva_nav_test vva_teleop3.launch
+  ```
 * Move the robot to generate the map, turn 360° in different places. If you want to restart the map execute:
-```bash
-rosservice call /rtabmap_jnano/reset
-```
+  ```bash
+  rosservice call /rtabmap_jnano/reset
+  ```
 #### For navigating (Localization mode):
 * Start rtabmap:
-```bash
-roslaunch vva_navigation vva_rtabmap_simulation.launch localization:=true
-```
+  ```bash
+  roslaunch vva_navigation vva_rtabmap_simulation.launch localization:=true
+  ```
 * Start the modules: navigation (move_base), image-camera_info sync, laserscan_kinect, laserscan_kinect_filter and vva_navigation_correction:
-```bash
-roslaunch vva_navigation vva_consolidated_nav.launch simulation:=true
-```
+  ```bash
+  roslaunch vva_navigation vva_consolidated_nav.launch simulation:=true
+  ```
 * Update the location coordinates in navigation_intent_params_simulation.yaml and start the navigation-intent node:
-```bash
-roslaunch vva_user_intents vva_user_intents.launch simulation:=true
-```
+  ```bash
+  roslaunch vva_user_intents vva_user_intents.launch simulation:=true
+  ```
 * Start the DeepSpeech module:
-```bash
-$AUTONOMOUS_MOBILE_ROBOT_HOME/DeepSpeechModule/run_DS_module_laptop.sh
-```
+  ```bash
+  $AUTONOMOUS_MOBILE_ROBOT_HOME/DeepSpeechModule/run_DS_module_laptop.sh
+  ```
 * Start the Voice Interaction Speech Recognition module:
-```bash
-roslaunch vva_voice_interact_server vva_voice_interact_server.launch
-```
+  ```bash
+  roslaunch vva_voice_interact_server vva_voice_interact_server.launch
+  ```
+
+  Simulation running on Gazebo
+  <img src="Documentation/Simulation_Gazebo.png" alt="Gazebo simulator img"
+  style="float: left; margin-right: 10px;" width=50%/>
+
+  Simulation as seen from Rviz
+  <img src="Documentation/Simulation_rviz.png" alt="Rviz img"
+  style="float: left; margin-right: 10px;" width=50%/>
+
 
 ## Run on the hardware (Jetson Nano)
 
-~~TODO!~~
+_**TODO!**_
 
 ## Known Issues
 * The model is not shown in Gazebo, when the joints are of type "revolute". For example, this happened with the joints between the Kinect and the base.

@@ -7,14 +7,15 @@ Here you will find the instructions to test the VVA Autonomous Mobile Robot, eit
   > NOTE: These steps were tested on Linux Mint 19.1 which is based on Ubuntu 18.04 (Bionic). For the hardware vehicle, was tested with an Nvidia Jetson Nano runnng the official Nvidia image of Ubuntu Bionic 18.04.
 
 * **Install ROS Melodic**
+
       > It should also work in ROS Noetic but it has not been tested yet.
 
-Follow the instructions from the page [Ubuntu install of ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
+    Follow the instructions from the page [Ubuntu install of ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
 * **Install DeepSpeech v0.8.2** for TensorFlow-Lite (If installing on the J-Nano use python3.7).
-```bash
-python3 -m pip install deepspeech-tflite
-````
+    ```bash
+    python3 -m pip install deepspeech-tflite
+    ````
 * **Download rosjava minimal (Optional)**: If you want to make a modification of the request or the response of the ROS Service used in the Mobile App, then rosjava is needed to generate the .jar file. [Get rosjava_minimal](http://wiki.ros.org/rosjava/Tutorials/kinetic/Source%20Installation)
 
 ### VVA Installation
